@@ -4,25 +4,25 @@
 	<head>
 		<!-- Basic Page Info -->
 		<meta charset="utf-8" />
-		<title>Login </title>
+		<title>YuanBooks - Login</title>
 
 		<!-- Site favicon -->
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"
-			href="/back/vendors/images/apple-touch-icon.png"
+			href="/back/vendors/images/zhapavicon.png"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="32x32"
-			href="/back/vendors/images/favicon-32x32.png"
+			href="/back/vendors/images/zhapavicon.png"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="16x16"
-			href="/back/vendors/images/favicon-16x16.png"
+			href="/back/vendors/images/zhapavicon.png"
 		/>
 
 		<!-- Mobile Specific Metas -->
@@ -43,9 +43,7 @@
 			type="text/css"
 			href="/back/vendors/styles/icon-font.min.css"
 		/>
-		<link rel="stylesheet" type="text/css" href="/back/vendors/styles/style.css" />
-
-		
+		<link rel="stylesheet" type="text/css" href="/back/vendors/styles/style.css" />		
 		@stack('stylesheets')
 	</head>
 	<body class="login-page">
@@ -53,6 +51,7 @@
 			<div
 				class="container-fluid d-flex justify-content-between align-items-center"
 			>
+			
 				<div class="brand-logo">
 					<a href="landing">
 					

@@ -9,19 +9,19 @@
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"
-			href="/back/vendors/images/zhalogo.png"
+			href="/back/vendors/images/zhapavicon.png"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="32x32"
-			href="/back/vendors/images/zhalogo.png"
+			href="/back/vendors/images/zhapavicon.png"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="16x16"
-			href="/back/vendors/images/zhalogo.png"
+			href="/back/vendors/images/zhapavicon.png"
 		/>
 
 		<!-- Mobile Specific Metas -->
@@ -398,12 +398,12 @@
 								<span class="mtext">Pelanggan</span>
 							</a>
 						</li>
-						<li>
+						{{-- <li>
 							<a href="/data-siswa" class="dropdown-toggle no-arrow @if(request()->is('data-siswa')) active @endif">
 								<span class="micon bi bi-person"></span>
 								<span class="mtext">Petugas</span>
 							</a>
-						</li>
+						</li> --}}
 						
 					</ul>
 				</div>

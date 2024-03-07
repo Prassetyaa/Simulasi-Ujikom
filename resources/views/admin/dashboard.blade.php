@@ -73,7 +73,7 @@
 					<h2 class="title text-center mb-4">Produk</h2> <br>
 					<div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
 						<button class="btn btn-primary float-right" type="button" onclick="window.location.href='produk-create'">
-							<i class="bi bi-plus-lg">Produk</i>
+							<i class="bi bi-plus-lg">Product</i>
 						</button>
 					</div> <br> <br>
 					
@@ -81,96 +81,6 @@
 						<div class="row">
 							<div class="col-6 col-sm-4 col-lg-2">
 								<a href="produk-detail" class="cat-block">
-									<figure>
-										<span>
-											<img src="assets/images/zhabook2.png" alt="Category image">
-										</span>
-									</figure>
-	
-									<div class="font-14 text-secondary weight-500">
-										YuanBooks <br> Rp.100.000 (7)
-									</div>
-									<b> <p>Ampersand</p></b>
-								</a>
-							</div>
-
-							<div class="col-6 col-sm-4 col-lg-2">
-								<a href="category.html" class="cat-block">
-									<figure>
-										<span>
-											<img src="assets/images/zhabook2.png" alt="Category image">
-										</span>
-									</figure>
-	
-									<div class="font-14 text-secondary weight-500">
-										YuanBooks <br> Rp.100.000 (7)
-									</div>
-									<b> <p>Ampersand</p></b>
-								</a>
-							</div>
-
-							<div class="col-6 col-sm-4 col-lg-2">
-								<a href="category.html" class="cat-block">
-									<figure>
-										<span>
-											<img src="assets/images/zhabook2.png" alt="Category image">
-										</span>
-									</figure>
-	
-									<div class="font-14 text-secondary weight-500">
-										YuanBooks <br> Rp.100.000 (7)
-									</div>
-									<b> <p>Ampersand</p></b>
-								</a>
-							</div>
-
-							<div class="col-6 col-sm-4 col-lg-2">
-								<a href="category.html" class="cat-block">
-									<figure>
-										<span>
-											<img src="assets/images/zhabook2.png" alt="Category image">
-										</span>
-									</figure>
-	
-									<div class="font-14 text-secondary weight-500">
-										YuanBooks <br> Rp.100.000 (7)
-									</div>
-									<b> <p>Ampersand</p></b>
-								</a>
-							</div>
-
-							<div class="col-6 col-sm-4 col-lg-2">
-								<a href="category.html" class="cat-block">
-									<figure>
-										<span>
-											<img src="assets/images/zhabook2.png" alt="Category image">
-										</span>
-									</figure>
-	
-									<div class="font-14 text-secondary weight-500">
-										YuanBooks <br> Rp.100.000 (7)
-									</div>
-									<b> <p>Ampersand</p></b>
-								</a>
-							</div>
-
-							<div class="col-6 col-sm-4 col-lg-2">
-								<a href="category.html" class="cat-block">
-									<figure>
-										<span>
-											<img src="assets/images/zhabook2.png" alt="Category image">
-										</span>
-									</figure>
-	
-									<div class="font-14 text-secondary weight-500">
-										YuanBooks <br> Rp.100.000 (7)
-									</div>
-									<b> <p>Ampersand</p></b>
-								</a>
-							</div>
-
-							<div class="col-6 col-sm-4 col-lg-2">
-								<a href="category.html" class="cat-block">
 									<figure>
 										<span>
 											<img src="assets/images/zhabook2.png" alt="Category image">

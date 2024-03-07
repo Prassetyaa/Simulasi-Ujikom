@@ -9,7 +9,7 @@
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
     <button class="btn btn-primary float-right" type="button" onclick="window.location.href='data-siswa-create'">
-        <i class="bi bi-plus-lg">Tambah Siswa</i>
+        <i class="bi bi-plus-lg">Petugas</i>
     </button>
 </div>
 

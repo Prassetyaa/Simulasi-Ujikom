@@ -24,34 +24,7 @@
                     </div>
                     <form action="{{ route('login.auth') }}" method="POST">
                         @csrf
-                        {{-- <div class="select-role">
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn active">
-                                    <input type="radio" name="options" id="admin" />
-                                    <div class="icon">
-                                        <img
-                                            src="/back/vendors/images/briefcase.svg"
-                                            class="svg"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <span>I'm</span>
-                                    Teacher
-                                </label>
-                                <label class="btn">
-                                    <input type="radio" name="options" id="user" />
-                                    <div class="icon">
-                                        <img
-                                            src="/back/vendors/images/person.svg"
-                                            class="svg"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <span>I'm</span>
-                                    Student
-                                </label>
-                            </div>
-                        </div> --}}
+                        
                         <div class="input-group custom">
                             <input
                                 type="text"
