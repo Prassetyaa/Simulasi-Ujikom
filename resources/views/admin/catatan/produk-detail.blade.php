@@ -1,4 +1,4 @@
-@extends('back.layout.dashboard2-layoutx`')
+@extends('back.layout.dashboard2-layout')
 @section('title', isset($pageTitle) ? $pageTitle : 'ZhaBook - Detail Books')
 @section('content')
 <head>
