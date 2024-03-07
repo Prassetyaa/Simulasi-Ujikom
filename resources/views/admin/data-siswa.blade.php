@@ -21,10 +21,9 @@
                     <tr>
                         <td>No</td>
                         <th class="table-plus">Nama</th>
-                        <th>NIS</th>
-                        <th>Rayon</th>
-                        <th>Tingkat</th>
-                        <th>Jenis Kelamin</th>
+                        <th>Akun</th>
+                        <th>Password</th>
+                        
                         <th class="datatable-nosort">Actions</th>
                     </tr>
                 </thead>
@@ -41,8 +40,7 @@
                         </td>
                         <td>{{$value->nis}}</td>
                         <td>{{$value->rayon}}</td>
-                        <td>{{$value->tingkat}}</td>
-                        <td>{{$value->jk}}</td>
+                        
                         <td>
                             <div class="table-actions">
                                 <a href="/data-siswa-edit/{{$value->id}}" data-color="#265ed7"

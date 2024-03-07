@@ -106,7 +106,7 @@ class PelangganController extends Controller
 
         Pelanggan::whereId($id)->update($data);
 
-        return redirect()->route('pelanggan.siswa');
+        return redirect()->route('pelanggan');
     }
 
     /**
