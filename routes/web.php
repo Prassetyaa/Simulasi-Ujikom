@@ -6,6 +6,7 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\CodePelanggaranController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuruController;
@@ -66,6 +67,9 @@ Route::get('/pelanggan-show/{id}', [PelangganController::class, "detail_pelangga
 Route::get('/pelanggan-edit/{id}', [PelangganController::class, 'edit'])->name('pelanggan.edit');
 Route::put('/pelanggan-update/{id}', [PelangganController::class, 'update'])->name('pelanggan.update');
 Route::delete('/pelanggan-delete/{id}', [PelangganController::class, "destroy"])->name('pelanggan.delete');
+
+//produk 
+Route::get('/produk-detail', [ProdukController::class, "detail"])->name('produk.detail');
 
 //absensi
 Route::get('/absensi-siswa', [AbsensiController::class, 'index'])->name('absensi.siswa');

@@ -123,6 +123,6 @@ class PelangganController extends Controller
             $data->delete();
         }
 
-        return redirect()->route('pelanggan.siswa');
+        return redirect()->route('pelanggan');
     }
 }
