@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PelanggaranAdmin;
-use App\Models\Prestasi;
+use App\Models\Pelanggan;
 use App\Models\Pengguna;
 use Illuminate\Http\Request;
 
@@ -14,9 +14,9 @@ class AdminController extends Controller
     {
         $dataSiswa = Pengguna::count();
         $dataSiswaAll = Pengguna::all(); 
-        $totalPrestasi = Prestasi::count();
+        $totalPelanggan = Pelanggan::count();
         $totalPelanggaran = PelanggaranAdmin::count();
-        return view('admin.dashboard', compact('totalPrestasi', 'totalPelanggaran', 'dataSiswa', 'dataSiswaAll'));
+        return view('admin.dashboard', compact('totalPelanggan', 'totalPelanggaran', 'dataSiswa', 'dataSiswaAll'));
     }
 
     //code

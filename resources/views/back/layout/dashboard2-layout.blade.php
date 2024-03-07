@@ -482,7 +482,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/prestasi-siswa" class="dropdown-toggle no-arrow @if(request()->is('prestasi-siswa')) active @endif">
+							<a href="/pelanggan" class="dropdown-toggle no-arrow @if(request()->is('pelanggan')) active @endif">
 								<span class="micon bi bi-person"></span>
 								<span class="mtext">Pelanggan</span>
 							</a>

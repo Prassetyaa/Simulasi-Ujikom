@@ -17,7 +17,7 @@
 						<div class="card-box height-100-p widget-style3">
 							<div class="d-flex flex-wrap">
 								<div class="widget-data">
-									<div class="weight-700 font-24 text-dark">{{ $totalPrestasi }}</div>
+									<div class="weight-700 font-24 text-dark">{{ $totalPelanggan }}</div>
 									<div class="font-14 text-secondary weight-500">
 										Pelanggan
 									</div>
@@ -30,23 +30,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
-						<div class="card-box height-100-p widget-style3">
-							<div class="d-flex flex-wrap">
-								<div class="widget-data">
-									<div class="weight-700 font-24 text-dark">6</div>
-									<div class="font-14 text-secondary weight-500">
-										Guru
-									</div>
-								</div>
-								<div class="widget-icon">
-									<div class="icon" data-color="white">
-										<i class="bi bi-person-check"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
 						<div class="card-box height-100-p widget-style3">
 							<div class="d-flex flex-wrap">
@@ -133,51 +117,7 @@
 					</table>
 				</div>
 
-				{{-- <div class="title pb-20 pt-20">
-					<h2 class="h3 mb-0">Quick Start</h2>
-				</div> --}}
-
-				{{-- <div class="row">
-					<div class="col-md-4 mb-20">
-						<a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
-							<div class="img pb-30">
-								<img src="/back/vendors/images/medicine-bro.svg" alt="" />
-							</div>
-							<div class="content">
-								<h3 class="h4">Services</h3>
-								<p class="max-width-200">
-									We provide superior health care in a compassionate maner
-								</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 mb-20">
-						<a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
-							<div class="img pb-30">
-								<img src="/back/vendors/images/remedy-amico.svg" alt="" />
-							</div>
-							<div class="content">
-								<h3 class="h4">Medications</h3>
-								<p class="max-width-200">
-									Look for prescription and over-the-counter drug information.
-								</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 mb-20">
-						<a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
-							<div class="img pb-30">
-								<img src="/back/vendors/images/paper-map-cuate.svg" alt="" />
-							</div>
-							<div class="content">
-								<h3 class="h4">Locations</h3>
-								<p class="max-width-200">
-									Convenient locations when and where you need them.
-								</p>
-							</div>
-						</a>
-					</div>
-				</div> --}}
+				
 
 			</div>
 		</div>

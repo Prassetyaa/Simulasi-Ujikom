@@ -1,15 +1,15 @@
 @extends('back.layout.dashboard2-layout')
-@section('title', isset($pageTitle) ? $pageTitle : 'Data Code Pelangaran')
+@section('title', isset($pageTitle) ? $pageTitle : 'Pelanggan')
 @section('content')
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="mt-3 d-flex justify-content-center">
-    <h2><i class="bi bi-trophy"></i>Data Code Pelangaran</h2>
+    <h2><i class="bi bi-trophy"></i>Pelanggan</h2>
 </div>
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='code-pelanggaran-create'">
-        <i class="bi bi-plus-lg">Tambah Code Pelangaran</i>
+    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='pelanggan-create'">
+        <i class="bi bi-plus-lg">Tambah Pelanggan</i>
     </button>
 </div>
 
@@ -19,21 +19,35 @@
             <table class="data-table table nowrap">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th class="table-plus">Kode</th>
-                        <th>Deskripsi Pelangaran</th>
-                        <th class="datatable-nosort">Actions</th>
+                        <td>No</td>
+                        <th class="table-plus">Nama</th>
+                     {{-- Jenis EksKul --}}
+                        <th>Alamat</th>
+                        {{-- Nama Lomba --}}
+                        <th>No.telepon</th>
+                        <th class="datatable-nosort"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($codePelanggaran as $value)
+                    @foreach ($pelanggan as $value)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{$value->code}}</td>
-                        <td>{{$value->deskripsi}}</td>
+                        <td class="table-plus">
+                            <div class="name-avatar d-flex align-items-center">
+                                <div class="txt">
+                                    <div class="weight-600">{{$value->nama}}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{$value->alamat}}</td>
+                        <td>{{$value->telepon}}</td>
+
                         <td>
                             <div class="table-actions">
-                                <form method="POST" action="/code/{{$value->id}}" style="display: inline;">
+                                <a href="/pelanggan-edit/{{$value->id}}" data-color="#265ed7"
+                                    ><i class="icon-copy dw dw-edit2"></i
+                                ></a>
+                                <form action="{{ route('pelanggan.delete',['id' => $value->id] )}}" method="POST"  style="display: inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn-delete" style="background: none; border: none;">
@@ -43,6 +57,8 @@
                             </div>
                         </td>
                     </tr>
+
+                    
                     @endforeach
                 </tbody>
             </table>

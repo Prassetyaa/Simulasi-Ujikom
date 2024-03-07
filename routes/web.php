@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\CodePelanggaranController;
 use App\Http\Controllers\PrestasiController;
+use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuruController;
@@ -56,6 +57,15 @@ Route::get('/prestasi-siswa-show/{id}', [PrestasiController::class, "detail_pres
 Route::get('/prestasi-siswa-edit/{id}', [PrestasiController::class, 'edit'])->name('prestasi.edit');
 Route::put('/prestasi-siswa-update/{id}', [PrestasiController::class, 'update'])->name('prestasi.update');
 Route::delete('/prestasi-siswa-delete/{id}', [PrestasiController::class, "destroy"])->name('prestasi.delete');
+
+//pelanggan
+Route::get('/pelanggan', [PelangganController::class, "index"])->name('pelanggan');
+Route::get('/pelanggan-create', [PelangganController::class, "create"])->name('pelanggan.create');
+Route::post('/pelanggan-store', [PelangganController::class, 'store'])->name('pelanggan.store');
+Route::get('/pelanggan-show/{id}', [PelangganController::class, "detail_pelanggan"]);
+Route::get('/pelanggan-edit/{id}', [PelangganController::class, 'edit'])->name('pelanggan.edit');
+Route::put('/pelanggan-update/{id}', [PelangganController::class, 'update'])->name('pelanggan.update');
+Route::delete('/pelanggan-delete/{id}', [PelangganController::class, "destroy"])->name('pelanggan.delete');
 
 //absensi
 Route::get('/absensi-siswa', [AbsensiController::class, 'index'])->name('absensi.siswa');
