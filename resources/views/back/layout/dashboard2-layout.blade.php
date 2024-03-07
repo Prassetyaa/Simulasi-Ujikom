@@ -9,19 +9,19 @@
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"
-			href="/back/vendors/images/apple-touch-icon.png"
+			href="/back/vendors/images/zhalogo.png"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="32x32"
-			href="/back/vendors/images/favicon-32x32.png"
+			href="/back/vendors/images/zhalogo.png"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="16x16"
-			href="/back/vendors/images/favicon-16x16.png"
+			href="/back/vendors/images/zhalogo.png"
 		/>
 
 		<!-- Mobile Specific Metas -->
@@ -460,7 +460,7 @@
 		<div class="left-side-bar">
 			<div class="brand-logo">
 				<a href="dashboard">
-					<img src="/back/vendors/images/logo-rekapp.png" alt="dashboard" class="dark-logo" />
+					<img src="/back/vendors/images/zhalogo.png" alt="dashboard" class="dark-logo" />
 					<img
 						src="/back/vendors/images/logo-rekapp-white.png"
 						alt=""
@@ -481,37 +481,19 @@
 								<span class="mtext">Home</span>
 							</a>
 						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
+						<li>
+							<a href="/prestasi-siswa" class="dropdown-toggle no-arrow @if(request()->is('prestasi-siswa')) active @endif">
 								<span class="micon bi bi-person"></span>
-								<span class="mtext"> Siswa </span>
+								<span class="mtext">Pelanggan</span>
 							</a>
-							<ul class="submenu">
-								<li><a href="/data-siswa" class="@if(request()->is('data-siswa')) active @endif">Data Siswa</a></li>
-								<li><a href="/pelanggaran-siswa" class="@if(request()->is('pelanggaran-siswa')) active @endif">Pelanggaran Siswa</a></li>
-								<li><a href="/prestasi-siswa" class="@if(request()->is('prestasi-siswa')) active @endif">Prestasi Siswa</a></li>
-								<li><a href="/absensi-siswa" class="@if(request()->is('absensi-siswa')) active @endif">Absensi Siswa</a></li>
-								<li class="dropdown">
-									<a href="javascript:;" class="dropdown-toggle">
-										<span class="micon fa fa-plug"></span>
-										<span class="mtext">Code </span>
-									</a>
-									<ul class="submenu child">
-										<li><a href="/code-pelanggaran" class="@if(request()->is('code-pelanggaran') || request()->is('code-pelanggaran')) active @endif">Code Pelanggaran</a></li>
-										
-									</ul>
-								</li>
-							</ul>
-						</li>						
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-person-check"></span>
-								<span class="mtext"> Guru </span>
-							</a>
-							<ul class="submenu">
-								<li><a href="/data-guru" class="@if(request()->is('data-guru')) active @endif">Data Guru</a></li>
-							</ul>
 						</li>
+						<li>
+							<a href="/data-siswa" class="dropdown-toggle no-arrow @if(request()->is('data-siswa')) active @endif">
+								<span class="micon bi bi-person"></span>
+								<span class="mtext">Petugas</span>
+							</a>
+						</li>
+						
 					</ul>
 				</div>
 			</div>			

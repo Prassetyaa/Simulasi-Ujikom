@@ -9,7 +9,7 @@
 
 <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
     <button class="btn btn-primary float-right" type="button" onclick="window.location.href='prestasi-siswa-create'">
-        <i class="bi bi-plus-lg">Tambah Prestasi Siswa</i>
+        <i class="bi bi-plus-lg">Tambah Pelanggan</i>
     </button>
 </div>
 
@@ -21,10 +21,12 @@
                     <tr>
                         <td>No</td>
                         <th class="table-plus">Nama</th>
-                        <th>Jenis EksKul</th>
-                        <th>Nama Lomba</th>
-                        <th>Kelas</th>
-                        <th>Foto</th>
+                     {{-- Jenis EksKul --}}
+                        <th>Alamat</th>
+                        {{-- Nama Lomba --}}
+                        <th>No.telepon</th>
+                        {{-- foto --}}
+                        <th>Dibeli</th>
                         <th class="datatable-nosort">Actions</th>
                     </tr>
                 </thead>

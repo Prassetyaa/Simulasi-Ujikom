@@ -44,9 +44,7 @@ class PrestasiController extends Controller
             'nama' => 'required',
             'namaEkskul' => 'required',
             'namaLomba' => 'required',
-            'tingkat' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // menambahkan validasi untuk gambar
-            'deskripsi' => 'required',
         ]);
 
         $image = $request->file('foto');
