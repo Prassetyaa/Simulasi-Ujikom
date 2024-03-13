@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('nama')->unique();
             $table->string('password');
             $table->string('status')->default('inactive');
+            $table->enum('role',['admin','petugas','pelanggan'])->default('pelanggan');
             $table->rememberToken();
             $table->timestamps();
         });

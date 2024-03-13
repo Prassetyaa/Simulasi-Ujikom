@@ -34,9 +34,9 @@
 						<div class="card-box height-100-p widget-style3">
 							<div class="d-flex flex-wrap">
 								<div class="widget-data">
-									<div class="weight-700 font-24 text-dark">{{ $dataSiswa }}</div>
+									<div class="weight-700 font-24 text-dark">{{$totalPengguna}}</div>
 									<div class="font-14 text-secondary weight-500">
-										Petugas
+									 Pengguna / User
 									</div>
 								</div>
 								<div class="widget-icon">
@@ -54,11 +54,11 @@
 						<div class="card-box height-100-p widget-style3">
 							<div class="d-flex flex-wrap">
 								<div class="widget-data">
-									<div class="weight-700 font-24 text-dark">dummy</div>
+									<div class="weight-700 font-24 text-dark">{{$totalProduk}}</div>
 									<div class="font-14 text-secondary weight-500">Total Produk</div>
 								</div>
 								<div class="widget-icon">
-									<div class="icon" data-color="black">
+									<div class="icon" data-color="white">
 										<i class="bi bi-box" aria-hidden="true"></i>
 									</div>
 								</div>
@@ -70,7 +70,7 @@
 				{{-- TABLE DAFTAR PRODUK BUKU --}}
 
 				<div class="container"> <br>
-					<h2 class="title text-center mb-4">Produk</h2> <br>
+					<h2 class="title text-center mb-4">Product</h2> <br>
 					<div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
 						<button class="btn btn-primary float-right" type="button" onclick="window.location.href='produk-create'">
 							<i class="bi bi-plus-lg">Product</i>
@@ -78,24 +78,26 @@
 					</div> <br> <br>
 					
 					<div class="cat-blocks-container">
+						@foreach ($produk as $value)
+					{{ $loop->iteration }}
 						<div class="row">
 							<div class="col-6 col-sm-4 col-lg-2">
 								<a href="produk-detail" class="cat-block">
 									<figure>
 										<span>
-											<img src="assets/images/zhabook2.png" alt="Category image">
-										</span>
+											<img src="{{asset('fotoProduk/'.$value->img)}}" alt="">
+										</span> 
 									</figure>
 	
 									<div class="font-14 text-secondary weight-500">
-										YuanBooks <br> Rp.100.000 (7)
+										YuanBooks <br> Rp{{$value->harga}} ({{$value->stock}})
 									</div>
-									<b> <p>Ampersand</p></b>
+									<b> <p>{{$value->nama}}</p></b>
 								</a>
 							</div>
 						</div>
 					</div>
-					
+					@endforeach
 				</div>
 
 				

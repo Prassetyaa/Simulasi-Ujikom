@@ -184,7 +184,7 @@
 							<a class="dropdown-item" href="faq.html"
 								><i class="dw dw-help"></i> Help</a
 							> --}}
-							<a class="dropdown-item" href="landing"
+							<a class="dropdown-item" href="/"
 								><i class="dw dw-logout"></i> Log Out</a
 							>
 						</div>
@@ -396,6 +396,12 @@
 							<a href="/pelanggan" class="dropdown-toggle no-arrow @if(request()->is('pelanggan')) active @endif">
 								<span class="micon bi bi-person"></span>
 								<span class="mtext">Pelanggan</span>
+							</a>
+						</li>
+						<li>
+							<a href="/pengguna" class="dropdown-toggle no-arrow @if(request()->is('pengguna')) active @endif">
+								<span class="micon bi bi-person"></span>
+								<span class="mtext">Pengguna</span>
 							</a>
 						</li>
 						{{-- <li>

@@ -7,9 +7,7 @@
     <h2><i class="bi bi-trophy"></i>Tambah Code Pelangaran Siswa</h2>
 </div> --}}
 
-@if (Session::get('errors'))
-<p style="color: red">{{Session::get('errors')}}</p>
-@endif
+
 
 <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
     <div class="container">
@@ -20,9 +18,9 @@
             <div class="col-md-6 col-lg-5">
                 <div class="login-box bg-white box-shadow border-radius-10">
                     <div class="login-title">
-                        <h2 class="text-center text-primary">Login</h2>
+                        <h2 class="text-center text-primary">Logiiiin</h2>
                     </div>
-                    <form action="{{ route('login.auth') }}" method="POST">
+                    <form action="{{ route('login.login') }}" method="POST">
                         @csrf
                         
                         <div class="input-group custom">
@@ -32,6 +30,7 @@
                                 placeholder="Name"
                                 name="nama"
                                 id="nama" 
+                                value="{{old('nama')}}"
                             />
                             <div class="input-group-append custom">
                                 <span class="input-group-text"
@@ -41,11 +40,12 @@
                         </div>
                         <div class="input-group custom">
                             <input
-                                type="NIS"
+                                type="text"
                                 class="form-control form-control-lg"
                                 placeholder="Password"
                                 name="password"
                                 id="password" 
+                                value="{{old('password')}}"
                             />
                             <div class="input-group-append custom">
                                 <span class="input-group-text"
@@ -53,18 +53,11 @@
                                 ></span>
                             </div>
                         </div>
-                        <div class="row pb-30">
-                            <div class="col-6">
-                                <div class="custom-control custom-checkbox">
-                                    <input
-                                        type="checkbox"
-                                        class="custom-control-input"
-                                        id="customCheck1"
-                                    />
-                                    
-                                </div>
-                            </div>
-                        </div>
+                      
+                        @if (Session::get('errors'))
+                        <p style="color: red">{{Session::get('errors')}}</p>
+                        @endif
+                        
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="input-group mb-0">
