@@ -6,6 +6,7 @@ use Illuminate\Auth\Events\Logout;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -71,7 +72,51 @@ class AuthController extends Controller
             'role' => $request->role,
         ]);
 
-        return redirect()->route('pengguna')->with('success', 'Berhasil menambahakan pengguna');
+        return redirect()->route('pengguna')->withErrors('Succes Menambahkan Pengguna')->withInput();
+    }
+
+//EDIT---------------------------------------------------------------------------------------------------------------------------------
+
+    public function edit(Request $request, $id)
+    {
+        $data = User::find($id);
+        $pengguna = User::all();
+        return view('admin.catatan.pengguna-edit', compact('data', 'pengguna'));
+    }
+
+    
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(),[
+            'nama' => 'required',
+            'password' => 'required',
+            'role' => 'required',
+            
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
+
+        $data['nama'] = $request->nama;
+        $data['password'] = $request->password;
+        $data['role'] = $request->role;
+        
+
+        User::whereId($id)->update($data);
+
+        return redirect()->route('pengguna')->withErrors('Berhasil Update Data')->withInput();
+    }
+
+  //DELETE DATA ------------------------------------------------------------------------------------------------------------------------
+
+    public function destroy($id)
+    {
+        $data = User::find($id);
+
+        if ($data) {
+            $data->delete();
+        }
+
+        return redirect()->route('pengguna')->withErrors('Success Menghapus data')->withInput();
     }
 
     }

@@ -13,18 +13,18 @@
     <div class="row">
      
         <div class="col">
-            <label for="nama" class="form-label mt-4">Nama Produk</label>
+            <label for="" class="form-label mt-4">Nama Produk</label>
             <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Produk" aria-label="">
         </div>
         <div class="col">
-            <label for="nama" class="form-label mt-4">Harga</label>
+            <label for="" class="form-label mt-4">Harga</label>
             <input type="number" name="harga" id="harga" class="form-control" placeholder="Harga" aria-label="">
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <label for="namaLomba" class="form-label mt-4">stock</label>
-            <input type="text" name="stock" id="stock" class="form-control" placeholder="Stock" aria-label="">
+            <label for="" class="form-label mt-4">stock</label>
+            <input type="number" name="stock" id="stock" class="form-control" placeholder="Stock" aria-label="">
         </div>
    
         <div class="mb-3">

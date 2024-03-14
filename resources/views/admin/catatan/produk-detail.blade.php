@@ -55,7 +55,7 @@
 
             <div class="page-content">
                 <div class="container">
-                    <div class="product-details-top mb-2">
+                    <div class="product-details-top mb-6">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="product-gallery product-gallery-vertical">
@@ -68,23 +68,7 @@
                                             </a>
                                         </figure><!-- End .product-main-image -->
 
-                                        <div id="product-zoom-gallery" class="product-image-gallery">
-                                            <a class="product-gallery-item active" href="#" data-image="assets/images/products/single/centered/1.jpg" data-zoom-image="assets/images/products/single/centered/1-big.jpg">
-                                                <img src="assets/images/products/single/centered/1-small.jpg" alt="product side">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/centered/2.jpg" data-zoom-image="assets/images/products/single/centered/2-big.jpg">
-                                                <img src="assets/images/products/single/centered/2-small.jpg" alt="product cross">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/centered/3.jpg" data-zoom-image="assets/images/products/single/centered/3-big.jpg">
-                                                <img src="assets/images/products/single/centered/3-small.jpg" alt="product with model">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/centered/4.jpg" data-zoom-image="assets/images/products/single/centered/4-big.jpg">
-                                                <img src="assets/images/products/single/centered/4-small.jpg" alt="product back">
-                                            </a>
-                                        </div><!-- End .product-image-gallery -->
+                                        
                                     </div><!-- End .row -->
                                 </div><!-- End .product-gallery -->
                             </div><!-- End .col-md-6 -->

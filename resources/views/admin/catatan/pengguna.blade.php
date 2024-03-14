@@ -14,9 +14,13 @@
 </div>
 
 <div class="main-container">
+    <center> 
+        @if (Session::get('errors'))
+        <p style="color: green ">{{Session::get('errors')}}</p>
+        @endif</center>
     <div class="xs-pd-20-10 pd-ltr-20">
         <div class="card-box pb-20">
-            <table class="data-table table nowrap">
+            <table class="data-table table nowrap">    
                 <thead>
                     <tr>
                         <td>No</td>
@@ -38,6 +42,20 @@
                         </td>
                         <td>{{$value->password}}</td>
                         <td>{{$value->role}}</td>
+                        <td>
+                            <div class="table-actions">
+                                <a href="/pengguna-edit/{{$value->id}}" data-color="#265ed7"
+                                    ><i class="icon-copy dw dw-edit2"></i
+                                ></a>
+                                <form action="{{ route('pengguna.delete',['id' => $value->id] )}}" method="POST"  style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn-delete" style="background: none; border: none;">
+                                        <i class="icon-copy dw dw-delete-3" style="font-size: 1.2rem; color: red; cursor: pointer;"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
 
                     

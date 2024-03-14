@@ -14,6 +14,10 @@
 </div>
 
 <div class="main-container">
+    <center> 
+        @if (Session::get('errors'))
+        <p style="color: green ">{{Session::get('errors')}}</p>
+        @endif</center>
     <div class="xs-pd-20-10 pd-ltr-20">
         <div class="card-box pb-20">
             <table class="data-table table nowrap">

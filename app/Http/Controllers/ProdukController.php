@@ -52,7 +52,7 @@ class ProdukController extends Controller
             'img' => $uploaded,
         ]);
 
-        return redirect()->route('dashboard')->with('success', 'Berhasil menambahakan product');
+        return redirect()->route('dashboard')->withErrors('Berhasil menambahakan product')->withInput();
     }
 /**
      * Display the specified resource.

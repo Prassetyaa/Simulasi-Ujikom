@@ -18,17 +18,17 @@ class usersSeeder extends Seeder
 
             [
                 'nama'=>'admin',
-                'password'=>'admin123',
+                'password'=>bcrypt('admin123'),
                 'role'=>'admin'
             ],
             [
                 'nama'=>'petugas',
-                'password'=>'petugas123',
+                'password'=>bcrypt('petugas123'),
                 'role'=>'petugas'
             ],
             [
                 'nama'=>'pelanggan',
-                'password'=>'pelanggan123',
+                'password'=>bcrypt('pelanggan123'),
                 'role'=>'pelanggan'
             ]
         ];

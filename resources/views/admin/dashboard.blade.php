@@ -78,10 +78,14 @@
 					</div> <br> <br>
 					
 					<div class="cat-blocks-container">
+						<center> 
+							@if (Session::get('errors'))
+							<p style="color: green ">{{Session::get('errors')}}</p>
+							@endif</center>
 						@foreach ($produk as $value)
 					{{ $loop->iteration }}
 						<div class="row">
-							<div class="col-6 col-sm-4 col-lg-2">
+							<div class="col-6 col-sm-4 col-lg-2 ">
 								<a href="produk-detail" class="cat-block">
 									<figure>
 										<span>
@@ -90,7 +94,7 @@
 									</figure>
 	
 									<div class="font-14 text-secondary weight-500">
-										YuanBooks <br> Rp{{$value->harga}} ({{$value->stock}})
+										JuanStore <br> Rp{{$value->harga}} ({{$value->stock}})
 									</div>
 									<b> <p>{{$value->nama}}</p></b>
 								</a>

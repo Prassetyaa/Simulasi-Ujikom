@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pengguna;
+
 use App\Models\Pelanggan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -27,17 +27,11 @@ class PelangganController extends Controller
      */
     public function create()
     {
-        $dataSiswa = Pengguna::all();
         $pelanggan = Pelanggan::all();
-        return view('admin.catatan.pelanggan-create', compact('pelanggan', 'dataSiswa'));
+        return view('admin.catatan.pelanggan-create', compact('pelanggan'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -53,14 +47,9 @@ class PelangganController extends Controller
             'telepon' => $request->telepon,
         ]);
 
-        return redirect()->route('pelanggan')->with('success', 'Berhasil menambahakan pelanggan');
+        return redirect()->route('pelanggan')->withErrors('success menambahakan pelanggan')->withInput();
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Pelanggan  $prestasi
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($id)
     {
         $pelanggan = Pelanggan::findOrFail($id);
@@ -76,18 +65,11 @@ class PelangganController extends Controller
     public function edit(Request $request, $id)
     {
         $data = Pelanggan::find($id);
-        $dataSiswa = Pengguna::all();
         $pelanggan = Pelanggan::all();
-        return view('admin.catatan.pelanggan-edit', compact('data', 'pelanggan', 'dataSiswa'));
+        return view('admin.catatan.pelanggan-edit', compact('data', 'pelanggan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pelanggan  $prestasi
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(),[
@@ -106,7 +88,7 @@ class PelangganController extends Controller
 
         Pelanggan::whereId($id)->update($data);
 
-        return redirect()->route('pelanggan');
+        return redirect()->route('pelanggan')->withErrors('success Update Data pelanggan')->withInput();
     }
 
     /**
@@ -123,6 +105,6 @@ class PelangganController extends Controller
             $data->delete();
         }
 
-        return redirect()->route('pelanggan');
+        return redirect()->route('pelanggan')->withErrors('Success Menghapus data')->withInput();
     }
 }
