@@ -10,9 +10,11 @@ class ProdukController extends Controller
 {
     public function detail()
     {
-        
-        return view('admin.catatan.produk-detail');
+       
+        $produk = Produk::all();
+        return view('admin.catatan.produk-detail' ,compact('produk'));
     }
+//CREATE --------------------------------------------------------------------------------------
     public function create()
     {
         
@@ -20,20 +22,16 @@ class ProdukController extends Controller
         return view('admin.catatan.produk-create', compact('produk'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+//STORE ------------------------------------------------------------------------------------------   
     public function store(Request $request)
     {
-        // dd($request->all());
+        
         $validatedData= $request->validate([
             'nama' => 'required',
             'harga' => 'required',
             'stock' => 'required',
             'img' => 'required',
+            'deskripsi'=>'required',
         ]);
         $image = $request->file('img');
         $imgName = time().rand().'.'.$image->extension();
@@ -50,19 +48,18 @@ class ProdukController extends Controller
             'harga' => $request->harga,
             'stock' => $request->stock,
             'img' => $uploaded,
+            'deskripsi' => $request->deskripsi,            
         ]);
 
         return redirect()->route('dashboard')->withErrors('Berhasil menambahakan product')->withInput();
     }
-/**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Pelanggan  $prestasi
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
+//SHOW -------------------------------------------------------------------------------------------------------------------------------
+    public function show($id)
     {
-        $produk = Produk::all();
-        return view('admin.catatan.produk-show', ['produk' => $produk]);
+        $produk = Produk::find($id);
+        return view('admin.catatan.produk-detail', compact('produk'));
     }
+
+
+
 }

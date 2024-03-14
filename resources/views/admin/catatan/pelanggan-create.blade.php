@@ -26,16 +26,7 @@
             <label for="namaLomba" class="form-label mt-4">No. telepon</label>
             <input type="text" name="telepon" id="telepon" class="form-control" placeholder="No.telepon" aria-label="">
         </div>
-        {{-- <div class="col">
-            <label for="tingkat" class="form-label mt-4">Tingkat</label>
-            <select name="tingkat" id="tingkat" class="form-control" aria-label="Code Pelangaran">
-                <option value="">Tingkat</option>
-                <option value="X">X</option>
-                <option value="XI">XI</option>
-                <option value="XII">XII</option>
-            </select>
-        </div>
-    </div> --}}
+     
 	<br> <br>
     <div class="xs-pd-20-10 pd-ltr-20">
         <button class="btn btn-primary float-right" type="submit">Tambah</button>

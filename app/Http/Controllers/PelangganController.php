@@ -55,13 +55,7 @@ class PelangganController extends Controller
         $pelanggan = Pelanggan::findOrFail($id);
         return view('admin.catatan.pelanggan-show', compact('pelanggan'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Pelanggan  $prestasi
-     * @return \Illuminate\Http\Response
-     */
+//EDITTT ---------------------------------------------------------------------
     public function edit(Request $request, $id)
     {
         $data = Pelanggan::find($id);
@@ -91,12 +85,8 @@ class PelangganController extends Controller
         return redirect()->route('pelanggan')->withErrors('success Update Data pelanggan')->withInput();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Pelanggan  $prestasi
-     * @return \Illuminate\Http\Response
-     */
+//DELETE -----------------------------------------------------------------------------------------------------------------------------
+  
     public function destroy($id)
     {
         $data = Pelanggan::find($id);

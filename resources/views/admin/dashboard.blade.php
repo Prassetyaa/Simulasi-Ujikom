@@ -8,9 +8,7 @@
 
 <div class="main-container">
 			<div class="xs-pd-20-10 pd-ltr-20">
-				<div class="title pb-20">
-					<h2 class="h3 mb-0">Admin</h2>
-				</div>
+				
 				<div class="row pb-10">
 					<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
 						<div class="card-box height-100-p widget-style3">
@@ -69,12 +67,13 @@
 
 				{{-- TABLE DAFTAR PRODUK BUKU --}}
 
-				<div class="container"> <br>
-					<h2 class="title text-center mb-4">Product</h2> <br>
+				<div class="container"> <br> 
+					<h1 class="title text-center mb-1" >Product</h1> <br>
 					<div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
 						<button class="btn btn-primary float-right" type="button" onclick="window.location.href='produk-create'">
-							<i class="bi bi-plus-lg">Product</i>
+							<i class="bi bi-plus-lg">Product</i> 
 						</button>
+						<br>
 					</div> <br> <br>
 					
 					<div class="cat-blocks-container">
@@ -82,26 +81,26 @@
 							@if (Session::get('errors'))
 							<p style="color: green ">{{Session::get('errors')}}</p>
 							@endif</center>
-						@foreach ($produk as $value)
-					{{ $loop->iteration }}
-						<div class="row">
-							<div class="col-6 col-sm-4 col-lg-2 ">
+						<div class="row" >
+							@foreach ($produk as $value)
+							<div class="col-1 col-sm-4 col-lg-100 ">
 								<a href="produk-detail" class="cat-block">
 									<figure>
 										<span>
-											<img src="{{asset('fotoProduk/'.$value->img)}}" alt="">
+											<img src="{{asset('fotoProduk/'.$value->img)}}" alt="" >
 										</span> 
 									</figure>
 	
 									<div class="font-14 text-secondary weight-500">
-										JuanStore <br> Rp{{$value->harga}} ({{$value->stock}})
+										JuanStore <br> Rp {{$value->harga}} ({{$value->stock}})
 									</div>
 									<b> <p>{{$value->nama}}</p></b>
 								</a>
 							</div>
+							@endforeach
 						</div>
 					</div>
-					@endforeach
+					
 				</div>
 
 				
