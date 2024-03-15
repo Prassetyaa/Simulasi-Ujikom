@@ -8,12 +8,14 @@ use Illuminate\Support\Facades\Validator;
 
 class ProdukController extends Controller
 {
-    public function detail()
-    {
-       
-        $produk = Produk::all();
-        return view('admin.catatan.produk-detail' ,compact('produk'));
-    }
+    //SHOW -------------------------------------------------------------------------------------------------------------------------------
+public function show($id)
+{
+    $produk = Produk::findOrFail($id);
+    return view('admin.catatan.show-produk', compact('produk'));
+}
+
+
 //CREATE --------------------------------------------------------------------------------------
     public function create()
     {
@@ -53,12 +55,7 @@ class ProdukController extends Controller
 
         return redirect()->route('dashboard')->withErrors('Berhasil menambahakan product')->withInput();
     }
-//SHOW -------------------------------------------------------------------------------------------------------------------------------
-    public function show($id)
-    {
-        $produk = Produk::find($id);
-        return view('admin.catatan.produk-detail', compact('produk'));
-    }
+
 
 
 

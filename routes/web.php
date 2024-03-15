@@ -47,10 +47,12 @@ Route::put('/pelanggan-update/{id}', [PelangganController::class, 'update'])->na
 Route::delete('/pelanggan-delete/{id}', [PelangganController::class, "destroy"])->name('pelanggan.delete');
 
 //Produk Router
-Route::get('/produk-detail', [ProdukController::class, "detail"])->name('produk.detail');
+
 Route::get('/produk-create', [ProdukController::class, "create"])->name('produk.create');
 Route::post('/produk-store', [ProdukController::class, 'store'])->name('produk.store');
-Route::get('/produk-show/{id}', [ProdukController::class, "detail_produk"]);
+//Produk Detail
+Route::get('/show/{id}', [ProdukController::class, "show"])->name('produk.show');
+//-------------------------------------------------------------------------------------
 Route::get('/produk-edit/{id}', [ProdukController::class, 'edit'])->name('produk.edit');
 Route::put('/produk-update/{id}', [ProdukController::class, 'update'])->name('produk.update');
 Route::delete('/produk-delete/{id}', [ProdukController::class, "destroy"])->name('produk.delete');

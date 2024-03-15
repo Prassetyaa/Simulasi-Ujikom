@@ -23,8 +23,8 @@
     </div>
     <div class="row">
         <div class="col">
-            <label for="role" class="form-label mt-4">Role User</label>
-            <input type="text" name="role" id="role" class="form-control" placeholder="Role" aria-label="">
+            <label for="role" class="form-dropdown mt-4">Role User</label>
+            <input type="dropdown" name="role" id="role" class="form-control" placeholder="Role" aria-label="">
         </div>
 	<br> <br>
     <div class="xs-pd-20-10 pd-ltr-20">
