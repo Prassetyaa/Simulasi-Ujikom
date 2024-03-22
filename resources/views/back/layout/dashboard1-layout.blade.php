@@ -3,7 +3,7 @@
 	<head>
 		<!-- Basic Page Info -->
 		<meta charset="utf-8" />
-		<title>@yield ('title') - Admin</title>
+		<title>@yield ('title') - Petugas</title>
 
 		<!-- Site favicon -->
 		<link
@@ -95,64 +95,20 @@
 			<div class="header-left">
 				<div class="menu-icon bi bi-list"></div>
 				<div
-					class="search-toggle-icon bi bi-search"
+					class="search-toggle-icon bi bi-person"
 					data-toggle="header_search"
 				></div>
 				<div class="header-search">
 					<form>
 						<div class="form-group mb-0">
-							<i class="dw dw-search2 search-icon"></i>
+							<i class="bi bi-person-hearts search-icon"></i>
 							<input
 								type="text"
+								style="border: none;"
 								class="form-control search-input"
-								placeholder="Search Here"
+								placeholder="Petugas"
 							/>
-							{{-- <div class="dropdown">
-								<a
-									class="dropdown-toggle no-arrow"
-									href="#"
-									role="button"
-									data-toggle="dropdown"
-								>
-									<i class="ion-arrow-down-c"></i>
-								</a>
-								<div class="dropdown-menu dropdown-menu-right">
-									<div class="form-group row">
-										<label class="col-sm-12 col-md-2 col-form-label"
-											>From</label
-										>
-										<div class="col-sm-12 col-md-10">
-											<input
-												class="form-control form-control-sm form-control-line"
-												type="text"
-											/>
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-12 col-md-2 col-form-label">To</label>
-										<div class="col-sm-12 col-md-10">
-											<input
-												class="form-control form-control-sm form-control-line"
-												type="text"
-											/>
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-12 col-md-2 col-form-label"
-											>Subject</label
-										>
-										<div class="col-sm-12 col-md-10">
-											<input
-												class="form-control form-control-sm form-control-line"
-												type="text"
-											/>
-										</div>
-									</div>
-									<div class="text-right">
-										<button class="btn btn-primary">Search</button>
-									</div>
-								</div>
-							</div> --}}
+							
 						</div>
 					</form>
 				</div>
@@ -238,29 +194,18 @@
 					<ul id="accordion-menu">
 						
 						<li>
-							<a href="/dashboard" class="dropdown-toggle no-arrow @if(request()->is('dashboard')) active @endif">
+							<a href="/dashboard-petugas" class="dropdown-toggle no-arrow @if(request()->is('dashboard-petugas')) active @endif">
 								<span class="micon bi bi-house"></span>
 								<span class="mtext">Home</span>
 							</a>
 						</li>
 						<li>
-							<a href="/pelanggan" class="dropdown-toggle no-arrow @if(request()->is('pelanggan')) active @endif">
+							<a href="/pelanggan-list" class="dropdown-toggle no-arrow @if(request()->is('pelanggan-list')) active @endif">
 								<span class="micon bi bi-basket"></span>
 								<span class="mtext">Pembelian</span>
 							</a>
 						</li>
-						<li>
-							<a href="/pengguna" class="dropdown-toggle no-arrow @if(request()->is('pengguna')) active @endif">
-								<span class="micon bi bi-person"></span>
-								<span class="mtext">Pengguna</span>
-							</a>
-						</li>
-						{{-- <li>
-							<a href="/data-siswa" class="dropdown-toggle no-arrow @if(request()->is('data-siswa')) active @endif">
-								<span class="micon bi bi-person"></span>
-								<span class="mtext">Petugas</span>
-							</a>
-						</li> --}}
+						
 						
 					</ul>
 				</div>

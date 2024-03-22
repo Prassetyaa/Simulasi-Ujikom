@@ -53,10 +53,52 @@ public function show($id)
             'deskripsi' => $request->deskripsi,            
         ]);
 
-        return redirect()->route('dashboard')->withErrors('Berhasil menambahakan product')->withInput();
+        return redirect()->route('dashboard')->withErrors('Success menambahakan Product')->withInput();
     }
 
+//EDITTT ---------------------------------------------------------------------
+public function edit(Request $request, $id)
+{
+    $data = Produk::find($id);
+    $produk = Produk::all();
+    return view('admin.catatan.produk-edit', compact('data', 'produk'));
+}
 
+
+public function update(Request $request, $id)
+{
+    $validator = Validator::make($request->all(),[
+        'nama' => 'required',
+        'harga' => 'required',
+        'deskripsi' => 'required',
+        'stock' => 'required',        
+    ]);
+
+    if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
+
+    $data['nama'] = $request->nama;
+    $data['harga'] = $request->harga;
+    $data['deskripsi'] = $request->deskripsi;
+    $data['stock'] = $request->stock;
+
+
+    Produk::whereId($id)->update($data);
+
+    return redirect()->route('dashboard')->withErrors('success Update Data Produk')->withInput();
+}
+
+//DELETE -----------------------------------------------------------------------------------------------------------------------------
+
+public function destroy($id)
+{
+    $data = Produk::find($id);
+
+    if ($data) {
+        $data->delete();
+    }
+
+    return redirect()->route('dashboard')->withErrors('Success Menghapus Produk')->withInput();
+}
 
 
 }

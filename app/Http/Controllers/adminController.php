@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PelanggaranAdmin;
 use App\Models\Pelanggan;
-use App\Models\Pengguna;
 use App\Models\Produk;
 use App\Models\User;
 
@@ -23,7 +21,6 @@ class AdminController extends Controller
         return view('admin.dashboard', compact('totalPelanggan', 'produk','totalProduk', 'pengguna', 'totalPengguna'));
     }
 
-    
 
 
 }

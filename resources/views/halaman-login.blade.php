@@ -9,16 +9,14 @@
 
 
 
-<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
+<div class="login-wrap d-flex align-items-center flex-wrap ">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6 col-lg-7">
-                <img src="/back/vendors/images/login-page-img.png" alt="" />
-            </div>
-            <div class="col-md-6 col-lg-5">
+            <div class="col-md-6 col-lg-12">
                 <div class="login-box bg-white box-shadow border-radius-10">
                     <div class="login-title">
-                        <h2 class="text-center text-primary">Logiiiin</h2>
+                        <h2 class="text-center text-black">JuanStore</h2>
+                        <center><b><p class="text-center text-secondary">login</p></b></center>
                     </div>
                     <form action="{{ route('login.login') }}" method="POST">
                         @csrf

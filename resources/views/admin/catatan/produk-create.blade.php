@@ -25,21 +25,20 @@
             <label for="stock" class="form-label mt-4">stock</label>
             <input type="number" name="stock" id="stock" class="form-control" placeholder="Stock" aria-label="">
         </div>
-   
-        <div class="mb-4">
-            <label for="formFileMultiple" class="form-label">Foto Product</label>
+        <div class="col">
+            <label for="formFileMultiple" class="form-label mt-4">Foto Product</label>
             <input class="form-control" name= "img" type="file" id="formFileMultiple" multiple>
         </div> 
-     <div class="xs-pd-20-10 pd-ltr-20">
-        <button class="btn btn-primary float-right" type="submit">Tambah</button>
-     </div>
     </div> <br>
     <div class="row">
         <div class="col">
             <label for="deskripsi" class="form-label mt-2">Deskripsi Produk</label>
-            <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsi" aria-label="">
+            <textarea name="deskripsi" id="deskripsi" class="form-control" placeholder="" aria-label=""></textarea>
         </div>
-    </div>
+    </div>    
+    <div class="xs-pd-20-10 pd-ltr-20">
+        <button class="btn btn-primary float-right" type="submit">Tambah</button>
+     </div>
 </div>
 </form>
 

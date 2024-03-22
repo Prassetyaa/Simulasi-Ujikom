@@ -4,7 +4,7 @@
 	<head>
 		<!-- Basic Page Info -->
 		<meta charset="utf-8" />
-		<title>YuanBooks - Login</title>
+		<title>JuanStore - Login</title>
 
 		<!-- Site favicon -->
 		<link
@@ -47,22 +47,15 @@
 		@stack('stylesheets')
 	</head>
 	<body class="login-page">
-		<div class="login-header box-shadow">
-			<div
-				class="container-fluid d-flex justify-content-between align-items-center"
-			>
+		<div class="login-header box-shadow" style="">
+			<div class="container-fluid d-flex justify-content-between align-items-center">
 			
-				<div class="brand-logo">
-					<a href="landing">
-					
-						{{-- <img src="/back/vendors/images/logo-rekapp.png" alt="" /> --}}
+				<div class="brand-logo" style="">
+					<a href="">
+						
 					</a>
 				</div>
-				{{-- <div class="login-menu">
-					<ul>
-						<li><a href="register.html">Register</a></li>
-					</ul>
-				</div> --}}
+				
 			</div>
 		</div>
 		@yield('content')

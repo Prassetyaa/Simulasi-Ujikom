@@ -25,11 +25,6 @@ class usersSeeder extends Seeder
                 'nama'=>'petugas',
                 'password'=>bcrypt('petugas123'),
                 'role'=>'petugas'
-            ],
-            [
-                'nama'=>'pelanggan',
-                'password'=>bcrypt('pelanggan123'),
-                'role'=>'pelanggan'
             ]
         ];
 

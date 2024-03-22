@@ -20,8 +20,8 @@ class AuthController extends Controller
             'password' => 'required',
         ], 
         [
-            'nama.required' => 'nama harus diisi',
-            'password.required' => 'password harus diisi'
+            'nama.required' => 'Nama harus diisi',
+            'password.required' => 'Password harus diisi'
         ]);
 
 
@@ -31,16 +31,25 @@ class AuthController extends Controller
         ];
 
         if(Auth::attempt($infoLogin)){
-            return redirect('dashboard');
-        }else{
-            return redirect('')->withErrors('Nama & Password yang Anda Masukan Tidak Sesuai')->withInput();
+//INI UNTUK AUTHENTIKASI ROLE NYA AGAR MASUK KE HALAMAN MASING2 SESUAI AKUN
+            if(Auth::user()->role == 'admin'){
+                return redirect('dashboard');
+            }
+            elseif(Auth::user()->role == 'petugas'){
+                return redirect('dashboard-petugas');
+            }
+//INI JIKA SALAH MEMASUKAN AKUN
+        }
+        else{
+            return redirect('')->withErrors('Nama / Password Tidak Sesuai')->withInput();
         }
 
         }
     
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
-        return redirect('/');
+        return redirect('');
     }
 
     //CREATE USER DI HALAMAN ADMIN-------------------------------------------------------------------------------------------------

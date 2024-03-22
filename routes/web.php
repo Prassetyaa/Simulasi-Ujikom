@@ -2,32 +2,29 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SiswaController;
-use App\Http\Controllers\CodePelanggaranController;
-use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\ProdukController;
-use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\GuruController;
+use App\Http\Controllers\PetugasController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Auth;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
+
+
+
+//yang dapat mengakses halaman awal (login) hanya orang yang belum login
+Route::middleware(['guest'])->group(function(){
 //Login Router
-Route::get('/', function () {return view('halaman-login');});
-Route::get('/halaman-login', [AuthController::class, 'index'])->name('login');
+Route::get('/', [AuthController::class, 'index'])->name('login');
 Route::post('/halaman-login/login', [AuthController::class, 'login'])->name('login.login');
-// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+});
+
+//di atas akan di redirect ke halaman home(gaada halamannya), maka kita buat redirect ke halaman sesuai login role nya
+Route::get('/home',function(){
+return redirect('dashboard');
+});
+
 
 //Pengguna Router
 Route::get('/pengguna', [AuthController::class, "pengguna"])->name('pengguna');
@@ -47,17 +44,32 @@ Route::put('/pelanggan-update/{id}', [PelangganController::class, 'update'])->na
 Route::delete('/pelanggan-delete/{id}', [PelangganController::class, "destroy"])->name('pelanggan.delete');
 
 //Produk Router
-
 Route::get('/produk-create', [ProdukController::class, "create"])->name('produk.create');
 Route::post('/produk-store', [ProdukController::class, 'store'])->name('produk.store');
 //Produk Detail
 Route::get('/show/{id}', [ProdukController::class, "show"])->name('produk.show');
-//-------------------------------------------------------------------------------------
 Route::get('/produk-edit/{id}', [ProdukController::class, 'edit'])->name('produk.edit');
 Route::put('/produk-update/{id}', [ProdukController::class, 'update'])->name('produk.update');
 Route::delete('/produk-delete/{id}', [ProdukController::class, "destroy"])->name('produk.delete');
 
-//dashboard admin 
-Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+//MIDDLEWARE AUTHENTIKASI UNTUK MASUK KE HALAMAN DASHBOARD
+Route::middleware(['auth'])->group(function () {
+//DASHBOARD ADMIN
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard')->middleware('userAkses:admin');
+//DASHBOARD PETUGAS
+Route::get('/dashboard-petugas', [PetugasController::class, 'petugas'])->name('dashboard-petugas')->middleware('userAkses:petugas');
+//LOGOUT
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+});
+
+// HALAMAN DIPILIH (PETUGAS)------------------------------------------------------------------------------------------------------------------------------
+Route::get('/dipilih', [PetugasController::class, "dipilih"])->name('dipilih');
+
+//PELANGGAN-LIST
+Route::get('/pelanggan-list', [PetugasController::class, "list"])->name('pelanggan-list');
+Route::post('/pelanggan-list-store', [PetugasController::class, 'store'])->name('pelanggan-list.store');
+Route::get('/pelanggan-show/{id}', [PetugasController::class, "detail_pelanggan"]);
+Route::delete('/pelanggan-list-delete/{id}', [PetugasController::class, "destroy"])->name('pelanggan-list.delete');
+
 
 

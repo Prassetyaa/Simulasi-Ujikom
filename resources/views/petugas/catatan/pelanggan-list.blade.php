@@ -1,5 +1,5 @@
-@extends('back.layout.dashboard2-layout')
-@section('title', isset($pageTitle) ? $pageTitle : 'Pelanggan')
+@extends('back.layout.dashboard1-layout')
+@section('title', isset($pageTitle) ? $pageTitle : 'Pembelian Pelanggan')
 @section('content')
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -7,12 +7,7 @@
     <h2><i class="bi bi-trophy"></i>Pelanggan</h2>
 </div>
 
-{{-- TAMBAH PELANGGAN --}}
-{{-- <div class="xs-pd-20-10 pd-ltr-20" style="margin-top: 20px;">
-    <button class="btn btn-primary float-right" type="button" onclick="window.location.href='pelanggan-create'">
-        <i class="bi bi-plus-lg">Tambah Pelanggan</i>
-    </button>
-</div> --}}
+
 
 <div class="main-container">
     <center> 
@@ -30,8 +25,8 @@
                         <th>Alamat</th>
                         {{-- Nama Lomba --}}
                         <th>No.telepon</th>
-                        <th>Produk Dibeli</th>
-                        <th>Total</th>
+                        <th>Produk</th>
+                        <th>Total Harga</th>
                         <th>Date</th>
                         <th class="datatable-nosort"></th>
                     </tr>
@@ -54,10 +49,7 @@
                         <td></td>
                         <td>
                             <div class="table-actions">
-                                <a href="/pelanggan-edit/{{$value->id}}" data-color="#265ed7"
-                                    ><i class="icon-copy dw dw-edit2"></i
-                                ></a>
-                                <form action="{{ route('pelanggan.delete',['id' => $value->id] )}}" method="POST"  style="display: inline;">
+                                <form action="{{ route('pelanggan-list.delete',['id' => $value->id] )}}" method="POST"  style="display: inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn-delete" style="background: none; border: none;">

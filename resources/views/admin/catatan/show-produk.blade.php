@@ -3,7 +3,7 @@
 @section('content')
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
+<link rel="stylesheet" href="assetss/css/demos/show.css">
 <header>
   <div class="p-3 text-center bg-white border-bottom">
     <div class="container">
@@ -41,8 +41,8 @@
           <div class="mb-3">
             <span class="h5">Rp.{{$produk->harga}}</span>
             <span class="text-muted">/ per box</span>
-          </div>
-
+          </div><b>Deskripsi :</b> <br>
+  <br>
           <p>
             {{$produk->deskripsi}}
           </p>
@@ -50,20 +50,18 @@
 
           <div class="row mb-4">
            {{-- jumlah Produk --}}
-            <div class="col-md-4 col-6 mb-3">
-              <label class="mb-2 d-block">Quantity</label>
-              <div class="input-group mb-3" style="width: 170px;">
-                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark">
-                  <i class="bi bi-plus"></i>
-                </button>
-                <input type="text" class="form-control text-center border border-secondary px-3" placeholder="0" aria-label="Example text with button addon" aria-describedby="button-addon1" />
-                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark">
-                  <i class="bi bi-dash"></i>
-                </button>
-              </div>
-            </div>
+            
           </div>
-          <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 bi bi-currency-dollar"></i> Jumlahkan  </a>
+          <a href="/dashboard" class="btn btn-secondary shadow-0"> <i class="me-1 bi bi-arrow-bar-left"></i> Back</a>    
+          <a href="/produk-edit/{{$produk->id}}" class="btn btn-primary shadow-0"> <i class="me-1 bi bi-pencil"></i> Edit</a> 
+          <form action="{{ route('produk.delete',['id' => $produk->id] )}}" method="POST"  style="display: inline;">
+            @csrf
+            @method('DELETE') <br> <br>
+           <button type="submit" class="btn-delete" style="background: none; border: none;">
+                   <i class="icon-copy dw dw-delete-3" style="font-size: 1.5rem; color: red; cursor: pointer;"></i>
+            </button>
+        </form>
+
         </div>
       </main>
     </div>
