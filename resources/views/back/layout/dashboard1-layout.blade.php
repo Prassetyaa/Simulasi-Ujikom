@@ -6,8 +6,7 @@
 		<title>@yield ('title') - Petugas</title>
 
 		<!-- Site favicon -->
-		<link
-			rel="apple-touch-icon"
+		<link rel="apple-touch-icon"
 			sizes="180x180"
 			href="/back/vendors/images/zhapavicon.png"
 		/>
@@ -88,6 +87,12 @@
 		</script>
 		<!-- End Google Tag Manager -->
 	</head>
+	<style>
+		html{
+			cursor: url('/assets/juancursor.png'), auto;
+			height: 100%
+		}
+	</style>
 	<body>
 
 
@@ -113,19 +118,17 @@
 					</form>
 				</div>
 			</div>
-			<div class="header-right">
+			<div class="header-right" >
 				
 				<div class="user-info-dropdown">
 					<div class="dropdown">
-						<a
+				<a
 							class="dropdown-toggle"
 							href="#"
 							role="button"
 							data-toggle="dropdown"
 						>
-							<span class="user-icon">
-								<img src="/back/vendors/images/zhaprofile.png" alt="" />
-							</span>
+							
 							<span class="user-name"></span>
 						</a>
 						<div

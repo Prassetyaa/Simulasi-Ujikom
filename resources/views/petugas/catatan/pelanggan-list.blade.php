@@ -28,7 +28,8 @@
                         <th>Produk</th>
                         <th>Total Harga</th>
                         <th>Date</th>
-                        <th class="datatable-nosort"></th>
+                        <th >
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,13 +50,16 @@
                         <td></td>
                         <td>
                             <div class="table-actions">
-                                <form action="{{ route('pelanggan-list.delete',['id' => $value->id] )}}" method="POST"  style="display: inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn-delete" style="background: none; border: none;">
-                                        <i class="icon-copy dw dw-delete-3" style="font-size: 1.2rem; color: red; cursor: pointer;"></i>
-                                    </button>
-                                </form>
+                                <a href="/pelanggan-edit/{{$value->id}}" data-color="#265ed7"
+                                    ><i class="icon-copy dw dw-edit2"></i
+                                ></a>
+                                    {{-- <form action="{{ route('pelanggan-list.delete',['id' => $value->id] )}}" method="POST"  style="display: inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn-delete" style="background: none; border: none;">
+                                            <i class="icon-copy dw dw-delete-3" style="font-size: 1.2rem; color: red; cursor: pointer;"></i>
+                                        </button>
+                                    </form> --}}
                             </div>
                         </td>
                     </tr>

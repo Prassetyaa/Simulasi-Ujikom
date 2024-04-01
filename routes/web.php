@@ -36,7 +36,6 @@ Route::delete('/pengguna-delete/{id}', [AuthController::class, "destroy"])->name
 
 //Pelanggan Router
 Route::get('/pelanggan', [PelangganController::class, "index"])->name('pelanggan');
-Route::get('/pelanggan-create', [PelangganController::class, "create"])->name('pelanggan.create');
 Route::post('/pelanggan-store', [PelangganController::class, 'store'])->name('pelanggan.store');
 Route::get('/pelanggan-show/{id}', [PelangganController::class, "detail_pelanggan"]);
 Route::get('/pelanggan-edit/{id}', [PelangganController::class, 'edit'])->name('pelanggan.edit');
@@ -46,11 +45,14 @@ Route::delete('/pelanggan-delete/{id}', [PelangganController::class, "destroy"])
 //Produk Router
 Route::get('/produk-create', [ProdukController::class, "create"])->name('produk.create');
 Route::post('/produk-store', [ProdukController::class, 'store'])->name('produk.store');
+
 //Produk Detail
 Route::get('/show/{id}', [ProdukController::class, "show"])->name('produk.show');
 Route::get('/produk-edit/{id}', [ProdukController::class, 'edit'])->name('produk.edit');
 Route::put('/produk-update/{id}', [ProdukController::class, 'update'])->name('produk.update');
 Route::delete('/produk-delete/{id}', [ProdukController::class, "destroy"])->name('produk.delete');
+
+
 
 //MIDDLEWARE AUTHENTIKASI UNTUK MASUK KE HALAMAN DASHBOARD
 Route::middleware(['auth'])->group(function () {
@@ -62,14 +64,26 @@ Route::get('/dashboard-petugas', [PetugasController::class, 'petugas'])->name('d
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-// HALAMAN DIPILIH (PETUGAS)------------------------------------------------------------------------------------------------------------------------------
-Route::get('/dipilih', [PetugasController::class, "dipilih"])->name('dipilih');
+
+
 
 //PELANGGAN-LIST
+Route::get('/pelanggan-create', [PelangganController::class, "create"])->name('pelanggan.create');
 Route::get('/pelanggan-list', [PetugasController::class, "list"])->name('pelanggan-list');
 Route::post('/pelanggan-list-store', [PetugasController::class, 'store'])->name('pelanggan-list.store');
 Route::get('/pelanggan-show/{id}', [PetugasController::class, "detail_pelanggan"]);
 Route::delete('/pelanggan-list-delete/{id}', [PetugasController::class, "destroy"])->name('pelanggan-list.delete');
+
+// HALAMAN DIPILIH (PETUGAS)------------------------------------------------------------------------------------------------------------------------------
+Route::get('/dipilih', [PetugasController::class, "dipilih"])->name('dipilih');
+
+
+//STRUK (PETUGAS)------------------------------------------------------------------------------------------------------------------------------------------------------
+Route::get('/struk/{id_pelanggan}', [PelangganController::class, 'struk'])->name('struk');
+
+
+
+
 
 
 

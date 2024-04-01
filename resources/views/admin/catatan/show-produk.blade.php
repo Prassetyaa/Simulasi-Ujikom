@@ -39,7 +39,7 @@
           </div>
 
           <div class="mb-3">
-            <span class="h5">Rp.{{$produk->harga}}</span>
+            <span class="h5">Rp.{{number_format($produk->harga)}}</span>
             <span class="text-muted">/ per box</span>
           </div><b>Deskripsi :</b> <br>
   <br>

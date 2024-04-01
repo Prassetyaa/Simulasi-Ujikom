@@ -1,4 +1,4 @@
-@extends('back.layout.dashboard2-layout')
+@extends('back.layout.dashboard1-layout')
 @section('title', isset($pageTitle) ? $pageTitle : 'Edit Data Pelanggan')
 @section('content')
 

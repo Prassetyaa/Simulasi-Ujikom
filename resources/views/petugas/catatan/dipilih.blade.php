@@ -34,12 +34,12 @@
           <br> <br>
   
             <div class="row">
-              <dt class="col-3">Burger:</dt>
+              <dt class="col-3">Burger :</dt>
               <dd class="col-9">Rp 20.000  <span class="text-muted">(2)</span></dd>
              
               
   
-              <dt class="col-3">Chicken:</dt>
+              <dt class="col-3">Chicken :</dt>
               <dd class="col-9">Rp 15.000 <span class="text-muted">(2)</span></dd>
               <br> <br> 
               <dt class="col-3">Total :</dt>
@@ -47,23 +47,25 @@
             </div>
   
             <hr />
-           
+            <form action="{{ route('pelanggan.store') }}" method="POST" enctype="multipart/form-data">
+              @csrf
             <div class="col">
                 <div>
                 <label for="nama" class="form-label "></label>
                 <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Pelanggan" aria-label="">
               </div>
               <div>
-                <label for="nama" class="form-label"></label>
-                <input type="text" name="nama" id="nama" class="form-control" placeholder="Alamat Pelanggan" aria-label="">
+                <label for="alamat" class="form-label"></label>
+                <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat Pelanggan" aria-label="">
               </div>
               <div>
-                <label for="nama" class="form-label"></label>
+                <label for="telepon" class="form-label"></label>
                 <input type="text" name="telepon" id="telepon" class="form-control" placeholder="No.Telepon" aria-label="">
               </div> <br>
             </div>
-            <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Pesan </a>
+            <button class="btn btn-primary float-right" type="submit"><i class="me-1 fa fa-shopping-basket"></i> Pesan</button>
           </div>
+          </form>
         </main>
       </div>
     </div>

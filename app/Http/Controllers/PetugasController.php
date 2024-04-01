@@ -2,32 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\Pelanggan;
 use App\Models\Produk;
 use App\Models\User;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class PetugasController extends Controller
 {
-    public function petugas()
+    public function petugas(Request $request)
     {
         $totalPelanggan = Pelanggan::count();
         $produk = Produk::all();
         $pengguna = User::all();
         $totalProduk = Produk::count();
         $totalPengguna = User::count();
-        return view('petugas.dashboard-petugas', compact('totalPelanggan', 'produk','totalProduk', 'pengguna', 'totalPengguna'));
+        $totalHarga = 0;
+        foreach ($produk as $p) {
+            $totalHarga += $p->harga * $p->quantity;
+        }
+
+        return view('petugas.dashboard-petugas', compact('totalPelanggan', 'produk','totalProduk', 'pengguna', 'totalPengguna','totalHarga'));
     }
 
-// INI UNTUK NANTI HALAMAN CHECKOUT (MENGHITUNG SUBTOTAL)
+// HALAMAN CHCKOUT / DIPILIH ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public function dipilih()
     {
-        
-        return view('petugas.catatan.dipilih');
+        $produk = Produk::all();
+        return view('petugas.catatan.dipilih', compact('produk'));
     }
+ 
 
-//HALAMAN LIST NYA BUAT NAMPILIN LIST NAMA PELANGGAN
+//HALAMAN LIST NYA BUAT NAMPILIN LIST NAMA PELANGGAN ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public function list()
     {
         {
@@ -36,7 +44,7 @@ class PetugasController extends Controller
         }
     }
 
-// DELETE
+// DELETE --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public function destroy($id)
     {
         $data = Pelanggan::find($id);
@@ -48,48 +56,8 @@ class PetugasController extends Controller
         return redirect()->route('pelanggan-list')->withErrors('Success Menghapus data')->withInput();
     }
 
-// FUNCTION JUMLAH / SUBTOTAL 
-// decrement (pengurangan)
-public function decrementQuantity(int $produkId)
- {
-    $produkData = Produk::where('id',$produkId)->where('nama',auth()->user()->id)->first();
-    if($produkData)
-    {
-        $produkData->decrement('quantity');
-        $this->dispatchBrowserEvent('message',[
-            'text' => 'Quantity Updated',
-            'type' => 'success',
-            'status' => '200'
-        ]);
-    }else{
-        $this->dispatchBrowserEvent('message',[
-            'text' => 'Something Wrong',
-            'type' => 'error',
-            'status' => '404'
-        ]);
-    }
- }
 
-//increment (penambahan)
-public function incrementQuantity(int $produkId)
- {
-    $produkData = Produk::where('id',$produkId)->where('nama',auth()->user()->id)->first();
-    if($produkData)
-    {
-        $produkData->increment('quantity');
-        $this->dispatchBrowserEvent('message',[
-            'text' => 'Quantity Updated',
-            'type' => 'success',
-            'status' => '200'
-        ]);
-    }else{
-        $this->dispatchBrowserEvent('message',[
-            'text' => 'Something Wrong',
-            'type' => 'error',
-            'status' => '404'
-        ]);
-    }
- }
+
 }
 
 

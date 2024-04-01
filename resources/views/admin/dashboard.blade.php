@@ -96,7 +96,7 @@
 									</figure>
 	
 									<div class="font-14 text-secondary weight-500">
-										JuanStore <br> Rp {{$value->harga}} ({{$value->stock}})
+										JuanStore <br> Rp {{number_format($value->harga	)}} ({{$value->stock}})
 									</div>
 									<b> <p>{{$value->nama}}</p></b>
 								</a>

@@ -9,26 +9,18 @@ use Illuminate\Support\Facades\Validator;
 
 class PelangganController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   //HALAMAN NAMPILIN SEMUA DATA PELANGGAN
     public function index()
     {
         $pelanggan = Pelanggan::all();
         return view('admin.catatan.pelanggan', compact('pelanggan'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   //CREATE PELANGGANN ---------------------------------------------------------------------------------------------------------------------------
     public function create()
     {
         $pelanggan = Pelanggan::all();
-        return view('admin.catatan.pelanggan-create', compact('pelanggan'));
+        return view('petugas.catatan.dipilih', compact('pelanggan'));
     }
 
  
@@ -41,26 +33,37 @@ class PelangganController extends Controller
             
         ]);
 
-         Pelanggan::create([
+         $pelanggan = Pelanggan::create([
             'nama'=> $request->nama,
             'alamat' => $request->alamat,
             'telepon' => $request->telepon,
         ]);
+        return redirect()->route('struk', ['id_pelanggan' => $pelanggan->id])->withInput();
 
-        return redirect()->route('pelanggan')->withErrors('success menambahakan pelanggan')->withInput();
     }
-   
+// (jadi create di atas buat di halaman petugas saat mau checkout kan masukin data pelanggan, lalu di redirect ke halaman struk di bawah)
+
+//HALAMAN STRUK UNTUK NAMPILIN  NAMA PELANGGAN,HARGA,TOTALHARGA,PRODUK -------------------------------------------------------------------
+    public function struk($id_pelanggan)
+    {
+        {
+            $pelanggan = Pelanggan::findOrFail($id_pelanggan);
+            return view('petugas.catatan.struk', compact('pelanggan'));
+        }
+    }
+
+ //HALAMAN SHOW ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public function show($id)
     {
         $pelanggan = Pelanggan::findOrFail($id);
         return view('admin.catatan.pelanggan-show', compact('pelanggan'));
     }
-//EDITTT ---------------------------------------------------------------------
+//EDITTT ----------------------------------------------------------------------------------------------------------------------------------------
     public function edit(Request $request, $id)
     {
         $data = Pelanggan::find($id);
         $pelanggan = Pelanggan::all();
-        return view('admin.catatan.pelanggan-edit', compact('data', 'pelanggan'));
+        return view('petugas.catatan.pelanggan-edit', compact('data', 'pelanggan'));
     }
 
   
@@ -82,7 +85,7 @@ class PelangganController extends Controller
 
         Pelanggan::whereId($id)->update($data);
 
-        return redirect()->route('pelanggan')->withErrors('success Update Data pelanggan')->withInput();
+        return redirect()->route('pelanggan-list')->withErrors('success Update Data pelanggan')->withInput();
     }
 
 //DELETE -----------------------------------------------------------------------------------------------------------------------------

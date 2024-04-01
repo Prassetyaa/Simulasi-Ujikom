@@ -16,11 +16,12 @@ class CreateProduksTable extends Migration
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('harga');
+            $table->integer('harga')->default(0);
             $table->string('stock');
             $table->string('img');
             $table->string('deskripsi');
-            $table->string('quantity');
+            $table->integer('quantity')->default(0);
+            $table->integer('total_harga')->default(0);
             $table->timestamps();
         });
     }

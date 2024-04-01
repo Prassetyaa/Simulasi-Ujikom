@@ -54,9 +54,9 @@
                         <td></td>
                         <td>
                             <div class="table-actions">
-                                <a href="/pelanggan-edit/{{$value->id}}" data-color="#265ed7"
+                                {{-- <a href="/pelanggan-edit/{{$value->id}}" data-color="#265ed7"
                                     ><i class="icon-copy dw dw-edit2"></i
-                                ></a>
+                                ></a> --}}
                                 <form action="{{ route('pelanggan.delete',['id' => $value->id] )}}" method="POST"  style="display: inline;">
                                     @csrf
                                     @method('DELETE')
