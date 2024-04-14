@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Pelanggan;
 use App\Models\Produk;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 
 
@@ -25,13 +26,6 @@ class PetugasController extends Controller
         }
 
         return view('petugas.dashboard-petugas', compact('totalPelanggan', 'produk','totalProduk', 'pengguna', 'totalPengguna','totalHarga'));
-    }
-
-// HALAMAN CHCKOUT / DIPILIH ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    public function dipilih()
-    {
-        $produk = Produk::all();
-        return view('petugas.catatan.dipilih', compact('produk'));
     }
  
 
@@ -56,6 +50,19 @@ class PetugasController extends Controller
         return redirect()->route('pelanggan-list')->withErrors('Success Menghapus data')->withInput();
     }
 
+// PILIH PRODUK UNTUK DI MTERUSKAN KE HALAMAN DIPILIH ---------------------------------------------------------------------------------------------------------
+
+
+//UPDATE ------------------------------------------------------------------------------------------   
+
+
+
+    // HALAMAN CHCKOUT / DIPILIH ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    public function dipilih()
+    {
+        $produk = Produk::all();
+        return view('petugas.catatan.dipilih', compact('produk'));
+    }
 
 
 }

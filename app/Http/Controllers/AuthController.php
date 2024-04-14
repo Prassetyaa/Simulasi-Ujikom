@@ -6,6 +6,7 @@ use Illuminate\Auth\Events\Logout;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -75,9 +76,11 @@ class AuthController extends Controller
             'role' => 'required',
         ]);
 
+        $hashedPassword = Hash::make($request->password);
+
          User::create([
             'nama'=> $request->nama,
-            'password' => $request->password,
+            'password' => $hashedPassword,
             'role' => $request->role,
         ]);
 

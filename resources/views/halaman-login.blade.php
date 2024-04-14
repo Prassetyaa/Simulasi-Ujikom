@@ -59,7 +59,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="input-group mb-0">
-                                <button type="submit" class="btn btn-primary w-100">Submit</button>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
                                 </div>                                
                                 </div>
                             </div>

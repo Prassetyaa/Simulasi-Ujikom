@@ -100,7 +100,7 @@
 									</div>
 									<b> <p>{{$value->nama}}</p></b>
 								</a>
-							</div>
+							</div>	
 							@endforeach
 						</div>
 					</div>

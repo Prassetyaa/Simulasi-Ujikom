@@ -24,7 +24,11 @@
     <div class="row">
         <div class="col">
             <label for="role" class="form-dropdown mt-4">Role User</label>
-            <input type="dropdown" name="role" id="role" class="form-control" placeholder="Role" aria-label="">
+            <select name="role" id="role" class="form-control" aria-label="Role">
+                <option value="" disabled selected>Pilih Role</option>
+                <option value="admin">Admin</option>
+                <option value="petugas">Petugas</option>
+            </select>
         </div>
 	<br> <br>
     <div class="xs-pd-20-10 pd-ltr-20">

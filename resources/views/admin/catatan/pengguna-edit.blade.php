@@ -25,8 +25,12 @@
     </div>
     <div class="row">
         <div class="col">
-            <label for="role" class="form-label mt-4">Role</label>
-            <input type="text" name="role" id="role" class="form-control" value="{{ $data->role}}" >
+            <label for="role" class="form-dropdown mt-4">Role User</label>
+            <select name="role" id="role" class="form-control" aria-label="Role">
+                <option value="{{$data->role}}" disabled selected>Pilih Role</option>
+                <option value="admin">Admin</option>
+                <option value="petugas">Petugas</option>
+            </select>
         </div>
        
    

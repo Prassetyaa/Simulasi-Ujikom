@@ -95,127 +95,41 @@
 	</style>
 	<body>
 
-
-		<div class="header">
-			<div class="header-left">
-				<div class="menu-icon bi bi-list"></div>
-				<div
-					class="search-toggle-icon bi bi-person"
-					data-toggle="header_search"
-				></div>
-				<div class="header-search">
-					<form>
-						<div class="form-group mb-0">
-							<i class="bi bi-person-hearts search-icon"></i>
-							<input
-								type="text"
-								style="border: none;"
-								class="form-control search-input"
-								placeholder="Petugas"
-							/>
-							
-						</div>
-					</form>
-				</div>
-			</div>
-			<div class="header-right" >
-				
-				<div class="user-info-dropdown">
-					<div class="dropdown">
-				<a
-							class="dropdown-toggle"
-							href="#"
-							role="button"
-							data-toggle="dropdown"
-						>
-							
-							<span class="user-name"></span>
-						</a>
-						<div
-							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
-						>
-							<a class="dropdown-item" href="logout"
-								><i class="dw dw-logout"></i> Log Out</a
-							>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-{{-- Warna Sidebar --}}
-		<div class="right-sidebar">
-			<div class="right-sidebar-body customscroll">
-				<div class="right-sidebar-body-content">
-					<h4 class="weight-600 font-18 pb-10">Header Background</h4>
-					<div class="sidebar-btn-group pb-30 mb-10">
-						<a
-							href="javascript:void(0);"
-							class="btn btn-outline-primary header-white active"
-							>White</a
-						>
-						<a
-							href="javascript:void(0);"
-							class="btn btn-outline-primary header-dark"
-							>Dark</a
-						>
-					</div>
-
-					<h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
-					<div class="sidebar-btn-group pb-30 mb-10">
-						<a
-							href="javascript:void(0);"
-							class="btn btn-outline-primary sidebar-light"
-							>White</a
-						>
-						<a
-							href="javascript:void(0);"
-							class="btn btn-outline-primary sidebar-dark active"
-							>Dark</a
-						>
-					</div>
-				</div>
-			</div>
-		</div>
-{{-- Navbarnya --}}
-		<div class="left-side-bar">
-			<div class="brand-logo">
-				<a href="dashboard">
+		<nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.1);">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">
 					<img src="/back/vendors/images/zhalogo.png" alt="dashboard" class="dark-logo" />
-					<img
-						src="/back/vendors/images/logo-rekapp-white.png"
-						alt=""
-						class="light-logo"
-					/>
 				</a>
-				<div class="close-sidebar" data-toggle="left-sidebar-close">
-					<i class="ion-close-round"></i>
-				</div>
-			</div>
-			<div class="menu-block customscroll">
-				<div class="sidebar-menu">
-					<ul id="accordion-menu">
-						
-						<li>
-							<a href="/dashboard-petugas" class="dropdown-toggle no-arrow @if(request()->is('dashboard-petugas')) active @endif">
-								<span class="micon bi bi-house"></span>
-								<span class="mtext">Home</span>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+		
+				<div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: ">
+					<ul class="navbar-nav">
+						<li class="nav-item @if(request()->is('dashboard-petugas')) active @endif">
+							<a class="nav-link" href="/dashboard-petugas">
+								<span class="micon bi bi-house-fill"></span>
+							</a> 
+						</li>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<li class="nav-item @if(request()->is('pelanggan-list')) active @endif">
+							<a class="nav-link" href="/pelanggan-list">
+								<span class="micon bi bi-basket2-fill"></span>
 							</a>
 						</li>
-						<li>
-							<a href="/pelanggan-list" class="dropdown-toggle no-arrow @if(request()->is('pelanggan-list')) active @endif">
-								<span class="micon bi bi-basket"></span>
-								<span class="mtext">Pembelian</span>
+
+						<li class="nav-item" style="margin-left: 950px">
+							<a class="nav-link" href="logout">
+							<b>	<span class="micon bi bi-box-arrow-right"></span></b>
 							</a>
 						</li>
-						
-						
 					</ul>
 				</div>
-			</div>			
-		</div>
-		<div class="mobile-menu-overlay"></div>
-			@yield('content')
+			</div>
+		</nav>
+		
+
+		<!-- Isi konten -->
+		@yield('content')
 
 		<!-- js -->
 		<script src="/back/vendors/scripts/core.js"></script>
@@ -228,6 +142,5 @@
 		<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 		<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 		<script src="/back/vendors/scripts/dashboard3.js"></script>
-		
 	</body>
 </html>

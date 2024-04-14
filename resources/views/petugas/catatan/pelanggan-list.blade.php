@@ -4,12 +4,9 @@
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="mt-3 d-flex justify-content-center">
-    <h2><i class="bi bi-trophy"></i>Pelanggan</h2>
+    <h2>Pelanggan</h2>
 </div>
-
-
-
-<div class="main-container">
+<div class="main-container" style="margin-left: -250px">
     <center> 
         @if (Session::get('errors'))
         <p style="color: green ">{{Session::get('errors')}}</p>

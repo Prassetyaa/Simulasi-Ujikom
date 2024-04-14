@@ -76,7 +76,7 @@ Route::delete('/pelanggan-list-delete/{id}', [PetugasController::class, "destroy
 
 // HALAMAN DIPILIH (PETUGAS)------------------------------------------------------------------------------------------------------------------------------
 Route::get('/dipilih', [PetugasController::class, "dipilih"])->name('dipilih');
-
+// Route::put('/dipilih/{id}', [PetugasController::class, 'update'])->name('quantity.update');
 
 //STRUK (PETUGAS)------------------------------------------------------------------------------------------------------------------------------------------------------
 Route::get('/struk/{id_pelanggan}', [PelangganController::class, 'struk'])->name('struk');

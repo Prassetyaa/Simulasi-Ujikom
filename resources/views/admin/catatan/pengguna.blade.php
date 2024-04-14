@@ -25,7 +25,13 @@
                     <tr>
                         <td>No</td>
                         <th class="table-plus">Nama (Account)</th>
-                        <th>Password (Account)</th>
+                       <th >&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         Password (Account)</th>
                         <th>Role</th>
                     </tr>
                 </thead>

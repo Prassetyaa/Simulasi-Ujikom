@@ -6,13 +6,13 @@
 <link rel="stylesheet" href="assetss/css/demos/demo-4.css">
 
 <header>
-    <div class="bg-primary">
+    <div class="" style="margin-left: -300px">
       <div class="container py-4">
         <nav class="d-flex">
           <h6 class="mb-0">
-            <a href="" class="text-white-50">Home</a>
-            <span class="text-white-50 mx-2"> > </span>
-            <a href="" class="text-white-50">Penjualan</a>
+            <a href="dashboard" class="text-black-50">Home</a>
+            <span class="text-black-50 mx-2"> > </span>
+            <a href="#" class="text-black-50">Penjualan</a>
         
           </h6>
         </nav>
